@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .founder-card:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-gray-800 p-4">
+        <div class="container mx-auto flex justify-between items-center w-4/5">
+            <!-- Logo -->
+            <a href="./home.html" class="text-white text-lg font-bold">
+                Logo
+            </a>
+
+            <!-- Menu -->
+            <ul class="flex space-x-8 text-white">
+                <li><a href="./home-lg.html" class="hover:text-gray-400 transition duration-300 ease-in-out">Home</a></li>
+                <li><a href="#about" class="hover:text-gray-400 transition duration-300 ease-in-out">About</a></li>
+                <li><a href="./booking-lg.html" class="hover:text-gray-400 transition duration-300 ease-in-out">Booking</a></li>
+                <li><a href="./contactus-lg.html" class="hover:text-gray-400 transition duration-300 ease-in-out">Contact</a></li>
+            </ul>
+
+            <!-- Avatar -->
+            <div class="relative flex items-center">
+                <img src="https://via.placeholder.com/40" alt="Avatar" class="rounded-full w-10 h-10 cursor-pointer dropdown">
+                <div class="dropdown-menu absolute right-0 top-0 mt-12 w-48 bg-white rounded-md shadow-lg py-2 hidden">
+                    <a href="./profile.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Profile</a>
+                    <a href="#settings" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Settings</a>
+                    <a href="./dist/auth-login.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto mt-10 w-4/5">
+        <h1 class="text-4xl font-bold text-center mb-8 text-gray-800">Meet Our Founders</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <!-- Founder 1 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden founder-card">
+                <img src="./img/about/naruto1.png" alt="Founder 1" class="w-full">
+                <div class="p-6">
+                    <h2 class="text-2xl font-bold mb-2 text-gray-800">Founder Name 1</h2>
+                    <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</p>
+                </div>
+            </div>
+
+            <!-- Founder 2 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden founder-card">
+                <img src="./img/about/naruto2.png" alt="Founder 2" class="w-full">
+                <div class="p-6">
+                    <h2 class="text-2xl font-bold mb-2 text-gray-800">Founder Name 2</h2>
+                    <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-10">
+        <div class="container mx-auto py-6 px-4 w-4/5">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-lg font-bold mb-2">About Us</h3>
+                    <p class="text-gray-400">We are a leading film production company, dedicated to bringing the best movies to our audience.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-bold mb-2">Quick Links</h3>
+                    <ul>
+                        <li><a href="#home" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white">About</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white">Services</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-bold mb-2">Contact Us</h3>
+                    <p class="text-gray-400">123 Movie Lane, Film City, CA 12345</p>
+                    <p class="text-gray-400">Email: info@filmcompany.com</p>
+                    <p class="text-gray-400">Phone: (123) 456-7890</p>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-gray-500">
+                &copy; 2025 Film Company. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript to handle hover for the dropdown menu
+        const avatar = document.querySelector('.dropdown');
+        const dropdownMenu = document.querySelector('.dropdown-menu');
+        const body = document.getElementsByTagName("BODY")[0]
+        var isHidden;
+
+        avatar.addEventListener('click', () => {
+            dropdownMenu.classList.remove('hidden');
+            event.stopPropagation();
+            isHidden = dropdownMenu.classList.contains('hidden');
+        });
+
+        body.addEventListener('click', () => {
+            isHidden = dropdownMenu.classList.contains('hidden');
+            if(!isHidden){
+                dropdownMenu.classList.add('hidden');
+                isHidden = true;
+            }
+        });  
+    </script>
+</body>
+</html>
